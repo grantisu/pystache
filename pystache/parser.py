@@ -193,7 +193,7 @@ class _SectionNode(object):
 
         parts = []
         for val in values:
-            if callable(val):
+            if callable(val) and not getattr(current, 'do_not_call_in_templates', False:
                 # Lambdas special case section rendering and bypass pushing
                 # the data value onto the context stack.  From the spec--
                 #
